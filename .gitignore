@@ -1,0 +1,8 @@
+# .next/ 디렉터리 제외
+.next/
+
+# node_modules/ 디렉터리 제외
+node_modules/
+
+# .env 파일 등 개인 정보가 담길 수 있는 파일 제외
+.env
