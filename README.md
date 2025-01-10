@@ -6,7 +6,6 @@ Next.js를 사용하여 만든 웹 애플리케이션 실습 프로젝트입니�
 
 - **Next.js**
 - **TypeScript**
-- **CSS Modules**
 - **Vercel** (배포)
 
 ## 🚀 시작하기
