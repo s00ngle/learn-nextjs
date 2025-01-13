@@ -1,13 +1,14 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "Home",
+  keywords: ["Next", "Next.js", "React", "TypeScript", "Movie"],
 };
 
 export default function Page() {
   return (
     <div>
-      <h1>About Us</h1>
+      <h1>Home</h1>
     </div>
   );
 }
