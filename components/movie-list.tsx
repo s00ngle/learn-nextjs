@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { API_URL } from "../app/(home)/page";
+import { API_URL } from "@/app/urls";
 
 async function getMovies() {
   const response = await fetch(API_URL, { cache: "force-cache" });
