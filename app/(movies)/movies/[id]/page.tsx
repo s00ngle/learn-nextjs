@@ -8,8 +8,6 @@ export default async function MovieDetail({
 }: {
   params: { id: string };
 }) {
-  // const [movie, videos] = await Promise.all([getMovie(id), getVideos(id)]);
-
   const { id } = params;
 
   return (
