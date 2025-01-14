@@ -1,27 +1,30 @@
-"use client";
-
 import { Metadata } from "next";
-import { useEffect, useState } from "react";
+import Link from "next/link";
 
-// export const metadata: Metadata = {
-//   title: "Home",
-// };
+export const metadata: Metadata = {
+  title: "Home",
+};
 
-export default function Page() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [movies, setMovies] = useState();
+export const API_URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
 
-  const getMovies = async () => {
-    const response = await fetch(
-      "https://nomad-movies.nomadcoders.workers.dev/movies"
-    );
-    const json = await response.json();
-    setMovies(json);
-    setIsLoading(false);
-  };
+async function getMovies() {
+  const response = await fetch(API_URL);
+  const json = await response.json();
+  return json;
 
-  useEffect(() => {
-    getMovies();
-  }, []);
-  return <div>{isLoading ? "Loading..." : JSON.stringify(movies)}</div>;
+  // 위 코드와 동일
+  // return await fetch(URL).then((response) => response.json());
+}
+
+export default async function HomePage() {
+  const movies = await getMovies();
+  return (
+    <div>
+      {movies.map((movie) => (
+        <li key={movie.id}>
+          <Link href={`movies/${movie.id}`}>{movie.title}</Link>
+        </li>
+      ))}
+    </div>
+  );
 }
