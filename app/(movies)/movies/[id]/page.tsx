@@ -8,7 +8,8 @@ export default async function MovieDetail({
 }: {
   params: { id: string };
 }) {
-  const { id } = params;
+  // Await the params object before using its properties
+  const { id } = await params;
 
   return (
     <div>
