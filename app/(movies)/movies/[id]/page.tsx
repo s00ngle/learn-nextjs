@@ -4,11 +4,13 @@ import MovieVideos from "../../../../components/movie-videos";
 import Spinner from "../../../../components/spinner";
 
 export default async function MovieDetail({
-  params: { id },
+  params,
 }: {
   params: { id: string };
 }) {
   // const [movie, videos] = await Promise.all([getMovie(id), getVideos(id)]);
+
+  const { id } = params;
 
   return (
     <div>
