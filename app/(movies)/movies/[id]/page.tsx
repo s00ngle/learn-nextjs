@@ -6,7 +6,7 @@ import Spinner from "@/components/spinner";
 export default async function MovieDetail({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
   return (
