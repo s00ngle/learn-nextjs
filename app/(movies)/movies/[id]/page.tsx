@@ -3,13 +3,13 @@ import MovieInfo from "../../../../components/movie-info";
 import MovieVideos from "../../../../components/movie-videos";
 import Spinner from "../../../../components/spinner";
 
+// async로 컴포넌트 정의
 export default async function MovieDetail({
   params,
 }: {
   params: { id: string };
 }) {
-  // Await the params object before using its properties
-  const { id } = await params;
+  const { id } = await params; // 여기에서 비동기적으로 처리
 
   return (
     <div>
