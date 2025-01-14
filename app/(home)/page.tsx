@@ -1,5 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import MovieList from "../../components/movie-list";
+import { Suspense } from "react";
+import Spinner from "../../components/spinner";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -7,24 +10,13 @@ export const metadata: Metadata = {
 
 export const API_URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
 
-async function getMovies() {
-  const response = await fetch(API_URL);
-  const json = await response.json();
-  return json;
-
-  // 위 코드와 동일
-  // return await fetch(URL).then((response) => response.json());
-}
-
 export default async function HomePage() {
-  const movies = await getMovies();
   return (
     <div>
-      {movies.map((movie) => (
-        <li key={movie.id}>
-          <Link href={`movies/${movie.id}`}>{movie.title}</Link>
-        </li>
-      ))}
+      <h1>Home Page</h1>
+      <Suspense fallback={<Spinner />}>
+        <MovieList />
+      </Suspense>
     </div>
   );
 }

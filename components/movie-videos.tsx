@@ -2,8 +2,9 @@ import { API_URL } from "../app/(home)/page";
 
 async function getVideos(id: string) {
   console.log(`Fetching videos: ${Date.now()}`);
-  await new Promise((resolve) => setTimeout(resolve, 3000));
-  const response = await fetch(`${API_URL}/${id}/videos`);
+  const response = await fetch(`${API_URL}/${id}/videos`, {
+    cache: "force-cache",
+  });
   return response.json();
 }
 
