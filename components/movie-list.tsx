@@ -1,7 +1,12 @@
 import Link from "next/link";
 import { API_URL } from "@/app/urls";
 
-async function getMovies() {
+interface Movie {
+  id: string;
+  title: string;
+}
+
+async function getMovies(): Promise<Movie[]> {
   const response = await fetch(API_URL, { cache: "force-cache" });
   const json = await response.json();
   return json;
