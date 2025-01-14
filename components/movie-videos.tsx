@@ -6,6 +6,8 @@ async function getVideos(id: string) {
     cache: "force-cache",
   });
   return response.json();
+  // await new Promise((resolve) => setTimeout(resolve, 3000));
+  // throw new Error("something broke...")
 }
 
 export default async function MovieVideos({ id }: { id: string }) {
