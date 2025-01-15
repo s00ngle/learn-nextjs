@@ -11,7 +11,6 @@ export default async function MovieDetail({
   const { id } = await params;
   return (
     <div>
-      <h1>Movie Detail Page</h1>
       <Suspense fallback={<Spinner />}>
         <MovieInfo id={id} />
       </Suspense>

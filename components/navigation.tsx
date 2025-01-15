@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import styles from "@/styles/navigation.module.css";
 
 const navigationItems = [
   { path: "/", label: "Home" },
@@ -12,8 +13,8 @@ export default function Navigation() {
   const path = usePathname();
 
   return (
-    <nav>
-      <ul>
+    <nav className={styles.nav}>
+      <ul className={styles.list}>
         {navigationItems.map((item) => (
           <li key={item.path}>
             <Link href={item.path}>{item.label}</Link>
