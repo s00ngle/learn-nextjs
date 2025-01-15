@@ -1,8 +1,7 @@
 import { API_URL } from "@/app/urls";
 import styles from "@/styles/movie-info.module.css";
 
-async function getMovie(id: string) {
-  console.log(`Fetching movies: ${Date.now()}`);
+export async function getMovie(id: string) {
   const response = await fetch(`${API_URL}/${id}`, { cache: "force-cache" });
   return response.json();
 }

@@ -2,7 +2,6 @@ import { API_URL } from "@/app/urls";
 import styles from "@/styles/movie-videos.module.css";
 
 async function getVideos(id: string) {
-  console.log(`Fetching videos: ${Date.now()}`);
   const response = await fetch(`${API_URL}/${id}/videos`, {
     cache: "force-cache",
   });
