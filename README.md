@@ -1,6 +1,6 @@
 # Next.js 실습 프로젝트
 
-- https://learn-nextjs-pearl-gamma.vercel.app/
+- https://learn-nextjs-soongle.vercel.app/
 
 ## 🛠 기술 스택
 
